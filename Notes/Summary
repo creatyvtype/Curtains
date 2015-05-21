@@ -1,0 +1,90 @@
+Curtains
+User-based theatre reviews
+
+Title: Curtains
+Objective: To connect potential patrons to well-rated local performing arts
+
+Databases:
+  a) local theatre venues
+    have many productions
+    have many companies
+    columns: tags, name, description, neighborhood, street_address, city, state, zip, url, info_email, vote_rate, company_id, production_id
+  b) local theatre companies
+    have many productions
+    columns: tags, name, style, description, street_address, city, state, zip, url, info_email, vote_rate
+  c) productions of the companies
+    have many venues
+    columns: tags, name, genre, description, url, info_email, vote_rate
+  d) users
+    have many productions(that they've seen)
+    columns: name, email
+  e) votes
+    holds all votes of all kinds?
+    columns: production_id, production_vote, company_id, company_vote, venue_id, venue_vote, user_id
+
+API
+  a) tag searcher
+  b) voting
+  c) facebook link?
+
+MVP
+  a) user can be created with password to access their votes and records
+  b) user can search based on tags***maybe not
+  c) user can browse theatre venues and descriptions, see upcoming productions
+  d) user can browse theatre companies and descriptions, see upcoming productions
+  e) user can see individual production with links to purchase tickets
+  f) user can vote on the production*
+  *problem: restricting votes to people who have actually seen the production
+
+Potential features
+  a) mobile app allows to swipe the production ads of upcoming shows to favorite shows
+  b) alerts to let them know about popular shows near their current location
+  c) internal ticketing verification system or ticket purchasing method
+
+
+IF THIS IS WAY TOO BIG (and I think it is for now)
+PROJECT IDEA 2
+Title: Encore
+User-based theatre reviews
+
+Objective: To get feedback from patrons about a production they've seen as soon as it's over.
+
+MVP:
+a) ratings for a single production
+b) owner must log in to access internal parts of app
+c) owner can create questions for the survey
+d) owner can review results
+e) owner can delete old surveys
+c) user can submit ratings during a session
+d) ratings are stored in database
+
+Frame
+index Encore (password required)
+  see existing surveys
+    see survey itself
+    see results
+      rating average to each question
+      comments if they exist
+    delete survey
+  create new survey
+    form: production name, questions=>5 star rating selection, comments, email
+  deploy survey
+    display form
+    submit saves input in db
+    redirects to blank form
+    escape by leaving url manually
+
+Database
+  a) survey
+      has many questions
+      columns: production_name
+  b) question
+      has many votes
+      columns: name, survey_id
+  c) vote
+      columns: rating, question_id
+
+API
+  voting
+
+
