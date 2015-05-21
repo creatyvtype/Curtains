@@ -14,6 +14,7 @@ Databases:
     columns: tags, name, style, description, street_address, city, state, zip, url, info_email, vote_rate
   c) productions of the companies
     have many venues
+    have many dates
     columns: tags, name, genre, description, url, info_email, vote_rate
   d) users
     have many productions(that they've seen)
@@ -21,6 +22,8 @@ Databases:
   e) votes
     holds all votes of all kinds?
     columns: production_id, production_vote, company_id, company_vote, venue_id, venue_vote, user_id
+  f) dates
+    columns: date, production_id, venue_id, company_id
 
 API
   a) tag searcher
