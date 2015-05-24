@@ -1,1 +1,44 @@
-SHOWS ONE COMPANY
+<h1>About the Company</h1>
+<div>
+  <% if @company.votes.count > 0 %>
+  Rating: <%= @company.rating %> out of <%= @company.votes.count %> votes.
+  <% else %>
+  Rating: This company is not yet rated.
+  <% end %>
+  <img src="../imgs/<%= @company.image %>" width="250px">
+  <div>
+    Name: <%= @company.name%><br>
+    Style: <%= @company.style%><br>
+    Description: <%= @company.description%><br>
+    Contact: <%= @company.email%>
+    Phone: <%= @company.phone%><br>
+    Website: <%= @company.url%><br>
+    Neighborhood: <%= @company.address.neighborhood%><br>
+    Location:<br>
+    <%= @company.address.street%><br>
+    <%= @company.address.city%>, <%= @company.address.state%> <%= @company.address.zip%>
+  </div>
+</div>
+
+
+<h1>Productions</h1>
+<% @productions.each do |production| %>
+<div>
+  <% if production.votes.count > 0 %>
+  Rating: <%= production.rating %> out of <%= production.votes.count %> votes.
+  <% else %>
+  Rating: This production is not yet rated.
+  <% end %>
+  <a href='/productions/<%= production.id%>'><img src="..//imgs/<%= production.image %>" width="250px"></a>
+  <div>
+  Title: <%= production.title%><br>
+  Writer: <%= production.writer%><br>
+  Director: <%= production.director%><br>
+  Genre: <%= production.genre%><br>
+  Description: <%= production.description%><br>
+  Website: <%= production.url%><br>
+  Contact: <%= production.email%>
+  </div>
+</div><br>
+<% end %>
+

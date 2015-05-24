@@ -1,0 +1,18 @@
+<div>
+  <!-- <a href="/companies/<%= company_id %>">
+    <img src=<%= img_src %> width="250px">
+  </a> -->
+  <div>
+    Name: <%= company.name %><br>
+    Style: <%= company.style %><br>
+    Description: <%= company.description %><br>
+    Contact: <%= company.email %>
+    Phone: <%= company.phone %><br>
+    Website: <%= company.url %><br>
+    Neighborhood: <%= company.address.neighborhood %><br>
+    Location:<br>
+    <%= company.address.street %><br>
+    <%= company.address.city %>, <%= company.address.state%> <%= company.address.zip %>
+  </div>
+</div>
+

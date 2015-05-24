@@ -10,6 +10,17 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <a href='/productions'>Productions</a>
+    <a href='/companies'>Companies</a>
+    <a href='/vote/new'>Vote</a>
+    <% if logged_in? %>
+      <a href='/sessions/logout'>Log Out</a>
+    <% else %>
+      <a href='/sessions/new'>Login</a>
+    <% end %>
+  </nav>
+  <header>Curtains!</header>
   <%= yield %>
 </body>
 </html>

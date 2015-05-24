@@ -1,2 +1,7 @@
-LOGIN PAGE
-LINKS TO CREATE NEW LOGIN
+<h1>Sign In to Curtains</h1>
+<%= erb :"login/_login_form", locals: {route: "/sessions/new", button_text: "Log&nbsp;In"} %>
+
+<h4>New to Curtains?</h4>
+<form method="link" action="/sessions/create">
+  <input type="submit" value="Sign Up!">
+</form>

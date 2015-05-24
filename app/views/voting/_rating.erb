@@ -1,0 +1,5 @@
+<% if object.votes.count > 0 %>
+  Rating: <%= object.rating %> out of <%= object.votes.count %> votes.
+<% else %>
+  Rating: This object is not yet rated.
+<% end %>

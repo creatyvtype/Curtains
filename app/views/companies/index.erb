@@ -1,1 +1,23 @@
-SHOWS ALL COMPANIES
+<h1>Companies</h1>
+<% @companies.each do |company| %>
+<div>
+  <% if company.votes.count > 0 %>
+  Rating: <%= company.rating %> out of <%= company.votes.count %> votes.
+  <% else %>
+  Rating: This company is not yet rated.
+  <% end %>
+  <a href='/companies/<%= company.id%>'><img src="imgs/<%= company.image %>" width="250px"></a>
+  <div>
+    Name: <%= company.name%><br>
+    Style: <%= company.style%><br>
+    Description: <%= company.description%><br>
+    Contact: <%= company.email%>
+    Phone: <%= company.phone%><br>
+    Website: <%= company.url%><br>
+    Neighborhood: <%= company.address.neighborhood%><br>
+    Location:<br>
+    <%= company.address.street%><br>
+    <%= company.address.city%>, <%= company.address.state%> <%= company.address.zip%>
+  </div>
+</div><br>
+<% end %>

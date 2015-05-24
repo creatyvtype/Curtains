@@ -2,8 +2,9 @@ class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :performance
   belongs_to :vote_type
+  belongs_to :production
+  belongs_to :company
 
-  # def total_score
+  validates :score, numericality: { only_integer: true }
 
-  # end
 end

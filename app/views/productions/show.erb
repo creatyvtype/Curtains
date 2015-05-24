@@ -1,1 +1,56 @@
-SHOWS ONE PRODUCTION
+<h1>Spotlight on Production:</h1>
+<div>
+  <% if @production.votes.count > 0 %>
+  Rating: <%= @production.rating %> out of <%= @production.votes.count %> votes.
+  <% else %>
+  Rating: This production is not yet rated.
+  <% end %>
+  <img src="../imgs/<%= @production.image %>" width="250px">
+  <div>
+  Company: <%= @production.company.name%><br>
+  Title: <%= @production.title%><br>
+  Writer: <%= @production.writer%><br>
+  Director: <%= @production.director%><br>
+  Genre: <%= @production.genre%><br>
+  Description: <%= @production.description%><br>
+  Website: <%= @production.url%><br>
+  Contact: <%= @production.email%>
+  </div>
+</div>
+
+<h1>Performances</h1>
+<div>
+<% @performances.each do |performance| %>
+  Date: <%= performance.date_and_time.strftime("%a  %b %d, %Y")%><br>
+  Time: <%= performance.date_and_time.strftime("%l:%M pm")%><br>
+  Price: $<%= performance.price.to_s %><br>
+  Neighborhood: <%= performance.address.neighborhood%><br>
+    Location:<br>
+    <%= performance.address.street%><br>
+    <%= performance.address.city%>, <%= performance.address.state%> <%= performance.address.zip%><br><br>
+<% end %>
+
+
+</div>
+
+<h1>About the Company</h1>
+<div>
+  <% if @company.votes.count > 0 %>
+  Rating: <%= @company.rating %> out of <%= @company.votes.count %> votes.
+  <% else %>
+  Rating: This company is not yet rated.
+  <% end %>
+  <img src="../imgs/<%= @company.image %>" width="250px">
+  <div>
+    Name: <%= @company.name%><br>
+    Style: <%= @company.style%><br>
+    Description: <%= @company.description%><br>
+    Contact: <%= @company.email%>
+    Phone: <%= @company.phone%><br>
+    Website: <%= @company.url%><br>
+    Neighborhood: <%= @company.address.neighborhood%><br>
+    Location:<br>
+    <%= @company.address.street%><br>
+    <%= @company.address.city%>, <%= @company.address.state%> <%= @company.address.zip%>
+  </div>
+</div>
