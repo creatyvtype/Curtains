@@ -1,4 +1,229 @@
 body {
+  margin-top: 0em;
+  background-color: black;
+  font-family: 'open sans';
+  color: rgb(163, 101, 155);
+  
+}
+
+#background-image {
+  margin-top: 1em;
   background-image: url(../imgs/curtain_background.png);
-  color: green;
+}
+
+#remaining-body {
+ 
+}
+
+nav {
+  padding-top: 1em;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  font-style: ;
+  border-bottom: .1em solid rgb(84, 15, 15);
+}
+
+nav > a {
+  padding: 0 3em;
+  text-decoration: none;
+  color: rgb(179, 68, 81);
+}
+
+header {
+  font-family: 'Dancing Script';
+  text-align: center;
+  font-size: 3em;
+  color: rgb(179, 68, 81);
+}
+
+#title {
+  
+}
+
+#subtitle {
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(255, 81, 81);
+}
+
+.production-view {
+  width: 60%;
+  margin: 2em auto;
+  border: .2em solid rgb(100, 20, 20);
+  background-color: rgba(55, 35, 35, 0.7);
+  padding-bottom: 2em;
+  padding-left: 2em;
+}
+
+.rating-and-image {
+  display: inline-block;
+  width: 30%
+}
+
+.production-details {
+  display: inline-block;
+  vertical-align: top;
+  width: 65%;
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.rating {
+  text-align: center;
+  font-size: 1em;
+  padding: .5em;
+  color: rgb(197, 220, 64);
+}
+
+.img-link {
+}
+
+img {
+  width: 100%;
+  padding-left: .5em;
+}
+
+.title-writer {
+  text-align: center;
+  font-size: 1.7em;
+  padding: 1em;
+  color: rgb(228, 32, 61);
+}
+
+.writer {
+   font-size:  .8em;
+   color: rgb(204, 101, 113);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+
+}
+
+.description {
+  color: white;
+  width: 20em;
+  border: 1px solid white;
+}
+
+.label {
+  color: rgb(147, 92, 255);
+  font-size: 1.15em;
+}
+
+.left {
+ margin-left: 5em;
+ display: inline-block;
+ width: 40%
+ padding-bottom: 2em;
+}
+
+.right {
+  margin-left: 5em;
+  display: inline-block;
+  width: 40%
+  padding-bottom: 2em;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+h4 {
+  text-align: center;
+  color: rgb(255, 81, 81);
+  margin: .5em;
+  padding-top: 1em;
+}
+
+#login {
+  text-align: center;
+  width: 20%;
+  padding: 1.5em;
+}
+
+form {
+  
+}
+
+input {
+ margin-bottom: .5em;
+}
+
+label {
+  margin-bottom: 1em;
+}
+
+#vote-form {
+  text-align: center;
+}
+
+legend{
+  font-size: 2em;
+}
+
+fieldset {
+  padding-top: 1em;
+  margin-top: 2em;
+  margin-right: 2em;
+}
+
+select {
+  
+}
+
+#perf-select-head {
+  font-size: 2em;
+}
+
+#vote-submit {
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.vote-desc {
+  
+}
+
+.score-label {
+  font-size: 1.5em;
+  color: red;
+}
+
+.score-box {
+  width: 1.2em;
+  text-align: center;
+  font-size: 2em;
+}
+
+.comment {
+  padding: .5em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#home {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+#home > a {
+  text-decoration: none;
+  color: rgb(169, 65, 77);
 }

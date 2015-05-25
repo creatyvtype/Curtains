@@ -1,21 +1,35 @@
 <h1>Productions</h1>
 <% @productions.each do |production| %>
-<div>
-  <% if production.votes.count > 0 %>
-  Rating: <%= production.rating %> out of <%= production.votes.count %> votes.
-  <% else %>
-  Rating: This production is not yet rated.
-  <% end %>
-  <a href='/productions/<%= production.id%>'><img src="imgs/<%= production.image %>" width="250px"></a>
-  <div>
-  Company: <%= production.company.name%><br>
-  Title: <%= production.title%><br>
-  Writer: <%= production.writer%><br>
-  Director: <%= production.director%><br>
-  Genre: <%= production.genre%><br>
-  Description: <%= production.description%><br>
-  Website: <%= production.url%><br>
-  Contact: <%= production.email%>
+<div class="production-view">
+
+  <div class="title-writer">
+    "<%= production.title%>" <span class="writer">by <%= production.writer%><span>
   </div>
-</div><br>
+
+  <div class="rating-and-image">
+    <div class="rating">
+      <% if production.votes.count > 0 %>
+      Rating: <%= production.rating %> out of 5<br>
+      <%= production.votes.count %> votes
+      <% else %>
+      Rating: This production is not yet rated.
+      <% end %>
+    </div>
+
+    <a class="img-link" href='/productions/<%= production.id%>'><img src="imgs/<%= production.image %>"></a>
+  </div>
+
+  <div class="production-details">
+    <span class="label">Director: </span><%= production.director%><br>
+    <span class="label">Genre: </span><%= production.genre%><br>
+    <span class="label">Company: </span><%= production.company.name%><br>
+    <span class="label">Description: </span><%= production.description%><br>
+    <span class="label">Price: </span>$20.00<br>
+    <ul><span class="label">Dates:</span>
+      <% production.dates.each do |date| %>
+        <li><%= date.strftime("%b %d, %Y at %l:%M pm") %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <% end %>

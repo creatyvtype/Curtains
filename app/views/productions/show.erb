@@ -1,56 +1,86 @@
 <h1>Spotlight on Production:</h1>
-<div>
-  <% if @production.votes.count > 0 %>
-  Rating: <%= @production.rating %> out of <%= @production.votes.count %> votes.
-  <% else %>
-  Rating: This production is not yet rated.
-  <% end %>
-  <img src="../imgs/<%= @production.image %>" width="250px">
-  <div>
-  Company: <%= @production.company.name%><br>
-  Title: <%= @production.title%><br>
-  Writer: <%= @production.writer%><br>
-  Director: <%= @production.director%><br>
-  Genre: <%= @production.genre%><br>
-  Description: <%= @production.description%><br>
-  Website: <%= @production.url%><br>
-  Contact: <%= @production.email%>
+<div class="production-view">
+
+  <div class="title-writer">
+    "<%= @production.title%>" <span class="writer">by <%= @production.writer%><span>
   </div>
+
+  <div class="rating-and-image">
+    <div class="rating">
+      <% if @production.votes.count > 0 %>
+      Rating: <%= @production.rating %> out of 5<br>
+      <%= @production.votes.count %> votes
+      <% else %>
+      Rating: This production is not yet rated.
+      <% end %>
+    </div>
+
+    <img src="../imgs/<%= @production.image %>">
+  </div>
+
+  <div class="production-details">
+    <span class="label">Director: </span><%= @production.director%><br>
+    <span class="label">Genre: </span><%= @production.genre%><br>
+    <span class="label">Description: </span><%= @production.description%><br>
+    <span class="label">Contact: </span><%= @production.email%>
+    <span class="label">Website </span><br>
+  </div>
+
 </div>
 
-<h1>Performances</h1>
-<div>
-<% @performances.each do |performance| %>
-  Date: <%= performance.date_and_time.strftime("%a  %b %d, %Y")%><br>
-  Time: <%= performance.date_and_time.strftime("%l:%M pm")%><br>
-  Price: $<%= performance.price.to_s %><br>
-  Neighborhood: <%= performance.address.neighborhood%><br>
-    Location:<br>
-    <%= performance.address.street%><br>
-    <%= performance.address.city%>, <%= performance.address.state%> <%= performance.address.zip%><br><br>
-<% end %>
 
+<div class="production-view">
+  <h1>Performances</h1>
 
-</div>
+  <% counter = 1 %>
+  <% @performances.each do |performance| %>
+    <% if counter % 2 != 0 %>
+      <div class="left">
+    <% else %>
+      <div class="right">
+    <% end %>
+    <% counter += 1 %>
 
-<h1>About the Company</h1>
-<div>
-  <% if @company.votes.count > 0 %>
-  Rating: <%= @company.rating %> out of <%= @company.votes.count %> votes.
-  <% else %>
-  Rating: This company is not yet rated.
+      <span class="label">Date: </span><%= performance.date_and_time.strftime("%a  %b %d, %Y")%><br>
+      <span class="label">Time:</span> <%= performance.date_and_time.strftime("%l:%M pm")%><br>
+      <span class="label">Price: </span>$<%= performance.price.to_s %><br>
+      <span class="label">Neighborhood: </span><%= performance.address.neighborhood%><br>
+      <span class="label">Location:</span><br>
+      <%= performance.address.street%><br>
+      <%= performance.address.city%>, <%= performance.address.state%> <%= performance.address.zip%>
+    </div>
+
   <% end %>
-  <img src="../imgs/<%= @company.image %>" width="250px">
-  <div>
-    Name: <%= @company.name%><br>
-    Style: <%= @company.style%><br>
-    Description: <%= @company.description%><br>
-    Contact: <%= @company.email%>
-    Phone: <%= @company.phone%><br>
-    Website: <%= @company.url%><br>
-    Neighborhood: <%= @company.address.neighborhood%><br>
-    Location:<br>
+</div>
+
+
+<div class="production-view">
+  <h1>About the Company</h1>
+
+  <div class="rating-and-image">
+    <div class="rating">
+      <% if @company.votes.count > 0 %>
+      Rating: <%= @company.rating %> out of 5<br>
+      <%= @company.votes.count %> votes
+      <% else %>
+      Rating: This company is not yet rated.
+      <% end %>
+    </div>
+
+    <img src="../imgs/<%= @company.image %>">
+  </div>
+
+  <div class="production-details">
+    <span class="label">Name: </span><%= @company.name%><br>
+    <span class="label">Style: </span><%= @company.style%><br>
+    <span class="label">Description:</span> <%= @company.description%><br>
+    <span class="label">Contact: </span><%= @company.email%>
+    <span class="label">Phone: </span><%= @company.phone%><br>
+    <span class="label">Website:</span> <%= @company.url%><br>
+    <span class="label">Neighborhood: </span><%= @company.address.neighborhood%><br>
+    <span class="label">Location:</span><br>
     <%= @company.address.street%><br>
     <%= @company.address.city%>, <%= @company.address.state%> <%= @company.address.zip%>
   </div>
+
 </div>

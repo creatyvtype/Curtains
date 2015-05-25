@@ -3,6 +3,8 @@
 <head>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -20,7 +22,17 @@
       <a href='/sessions/new'>Login</a>
     <% end %>
   </nav>
-  <header>Curtains!</header>
+  <div id="background-image">
+  <div id="remaining-body">
+
+  <header>
+    <span id="title">Curtains!</span><span id="subtitle">See What's Good in the Bay Area Theatre Scene</span>
+  </header>
+
   <%= yield %>
+
+  <footer> copyright me </footer>
+</div>
+</div>
 </body>
 </html>

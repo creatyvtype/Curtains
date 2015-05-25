@@ -1,26 +1,30 @@
-<form method="post" action='/vote/new'>
 
-  <label class="label" for="performance_id">
-    Select a performance
-  </label><br>
-  <select name="performance_id">
-    <% @performances.each do |performance| %>
-    <option value="<%= performance.id %>"><%= performance.production.title %>: <%= performance.date_and_time.strftime("%b %d, %Y")%> <%= performance.date_and_time.strftime("%l:%M pm")%></option>
+<div id="vote-form" class="production-view">
+  <form method="post" action='/vote/new'>
+
+    <label id="perf-select-head" class="label" for="performance_id">
+      Select a performance
+    </label><br>
+    <select name="performance_id">
+      <% @performances.each do |performance| %>
+      <option value="<%= performance.id %>"><%= performance.production.title %>: <%= performance.date_and_time.strftime("%b %d, %Y")%> <%= performance.date_and_time.strftime("%l:%M pm")%></option>
+      <% end %>
+    </select>
+    <br>
+
+    <h4>Rate the performance on the following. "1-5" only please. Comments are optional.</h4>
+
+    <% @vote_types.each do |vote_type| %>
+    <fieldset>
+    <legend><%= vote_type.criteria %></legend>
+    <span class="vote-desc"><%= vote_type.description %><br></span>
+    <span class="score-label">Score<br></span>
+    <input class="score-box" type="number" name="<%= vote_type.criteria %>[score]"placeholder="5"><br>
+    <textarea rows="4" cols="30" class="comment" type="text" name="<%= vote_type.criteria %>[comments]"placeholder="Comments"></textarea>
+  </fieldset>
     <% end %>
-  </select>
-  <br>
 
-  <h4>Rate the performance on the following. "1-5" only please. Comments are optional.</h4>
+    <input id="vote-submit" type="submit" value="Submit Vote!">
 
-  <% @vote_types.each do |vote_type| %>
-  <fieldset>
-  <legend><%= vote_type.criteria %></legend>
-  <%= vote_type.description %><br>
-  Score: <input type="number" name="<%= vote_type.criteria %>[score]"placeholder="5"><br>
-  <input type="text" name="<%= vote_type.criteria %>[comments]"placeholder="Comments"><br>
-</fieldset>
-  <% end %>
-
-  <input type="submit" value="Submit Vote!">
-
-</form>
+  </form>
+</div>
