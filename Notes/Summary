@@ -91,4 +91,5 @@ Database
 API
   voting
 
-
+Summary:
+Uses sinatra, html, css, RESTful CRUD, ActiveRecord
