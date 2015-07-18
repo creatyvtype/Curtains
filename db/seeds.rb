@@ -1,5 +1,3 @@
-require 'faker'
-
 Address.create(name: "Golden Thread Productions", street: "2325 Third Street, Suite #320", city: "San Francisco", state: "CA", zip: 94107)
 
 Company.create(name: "Golden Thread Productions", style: "Middle Eastern", description: "Founded in 1996, is the first American theatre company focused on the Middle East. We produce passionate and provocative plays from and about the Middle East that celebrate the multiplicity of its perspectives and identities. We are a developmental catalyst and vibrant artistic home to artists at various stages of their career. We bring the Middle East to the American stage, creating treasured cultural experiences for audiences of all ages and backgrounds. We believe that immersing yourself in someone else’s experience is the best way to appreciate their point of view.", phone: 4156264061, url: "http://www.goldenthread.org", address_id: 1, email: "information@goldenthread.org", image: "goldenthread.png")
