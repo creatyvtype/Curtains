@@ -27,8 +27,9 @@ end
 
 #creates login
 post '/users/new' do
-  User.create(email: params[:email], password: params[:password])
-  redirect '/sessions/new'
+  @user = User.create(email: params[:email], password: params[:password])
+  log_in(@user)
+  redirect '/'
 end
 
 get '/sessions/logout' do

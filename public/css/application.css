@@ -2,7 +2,7 @@ body {
   margin-top: 0em;
   background-color: black;
   font-family: 'open sans';
-  color: rgb(163, 101, 155);
+  color: #060606;
   
 }
 
@@ -49,13 +49,16 @@ header {
 h1 {
   text-align: center;
   color: rgb(255, 81, 81);
+  margin-top: 0;
 }
 
 .production-view {
   width: 60%;
   margin: 2em auto;
   border: .2em solid rgb(100, 20, 20);
-  background-color: rgba(55, 35, 35, 0.7);
+  border-radius: 3em;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-top: 2em;
   padding-bottom: 2em;
   padding-left: 2em;
 }
@@ -77,7 +80,7 @@ h1 {
   text-align: center;
   font-size: 1em;
   padding: .5em;
-  color: rgb(197, 220, 64);
+  color: rgb(255, 252, 0);
 }
 
 .img-link {
@@ -92,12 +95,13 @@ img {
   text-align: center;
   font-size: 1.7em;
   padding: 1em;
-  color: rgb(228, 32, 61);
+  padding-top: 0;
+  color: rgb(158, 0, 23);
 }
 
 .writer {
    font-size:  .8em;
-   color: rgb(204, 101, 113);
+   color: rgb(255, 5, 34);
 }
 
 ul {
@@ -117,7 +121,7 @@ li {
 }
 
 .label {
-  color: rgb(147, 92, 255);
+  color: #BF1817;
   font-size: 1.15em;
 }
 
@@ -138,11 +142,12 @@ li {
 footer {
   text-align: center;
   padding-bottom: 2em;
+  color: white;
 }
 
 h4 {
   text-align: center;
-  color: rgb(255, 81, 81);
+  color: rgb(255, 0, 0);
   margin: .5em;
   padding-top: 1em;
 }
@@ -167,6 +172,7 @@ label {
 
 #vote-form {
   text-align: center;
+  padding-top: 2em;
 }
 
 legend{
@@ -231,4 +237,8 @@ input[type=number]::-webkit-outer-spin-button {
 #logo {
   font-family: 'Dancing Script';
   font-size: 1.3em;
+}
+
+fieldset {
+  border: none;
 }

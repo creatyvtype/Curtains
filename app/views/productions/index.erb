@@ -24,7 +24,7 @@
     <span class="label">Genre: </span><%= production.genre%><br>
     <span class="label">Company: </span><%= production.company.name%><br>
     <span class="label">Description: </span><%= production.description%><br>
-    <span class="label">Price: </span>$20.00<br>
+    <span class="label">Price: </span>$<%= production.performances.first.price %>0<br>
     <ul><span class="label">Dates:</span>
       <% production.dates.each do |date| %>
         <li><%= date.strftime("%b %d, %Y at %l:%M pm") %></li>

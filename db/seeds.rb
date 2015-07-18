@@ -1,34 +1,18 @@
 require 'faker'
 
-counter = 1
-8.times do
-  Address.create(neighborhood: Faker::Commerce.color, street: Faker::Address.street_address, city: "San Francisco", state: "CA", zip: 94111)
-  counter += 1
-end
+Address.create(name: "Golden Thread Productions", street: "2325 Third Street, Suite #320", city: "San Francisco", state: "CA", zip: 94107)
 
+Company.create(name: "Golden Thread Productions", style: "Middle Eastern", description: "Founded in 1996, is the first American theatre company focused on the Middle East. We produce passionate and provocative plays from and about the Middle East that celebrate the multiplicity of its perspectives and identities. We are a developmental catalyst and vibrant artistic home to artists at various stages of their career. We bring the Middle East to the American stage, creating treasured cultural experiences for audiences of all ages and backgrounds. We believe that immersing yourself in someone else’s experience is the best way to appreciate their point of view.", phone: 4156264061, url: "http://www.goldenthread.org", address_id: 1, email: "information@goldenthread.org", image: "goldenthread.png")
 
-Company.create(name: Faker::Company.name, style: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, phone: Faker::Number.number(10), url: Faker::Internet.url, email: Faker::Internet.email, address_id: 1, image: "p1.jpg")
+Production.create(company_id: 1, title: "Fairytale Players Double-Bill", writer: "various", director: "various", genre: "Children's Theatre", description: 'Princess Tamar Rescues Nazar the Brave and 21 Days That Change the Year: Two beloved family-friendly productions, inspired by Iranian and Armenian fairytales will be presented in one afternoon.', url: "http://www.goldenthread.org/reorient2015/", email: "information@goldenthread.org", image: "fairytale.jpg" )
 
-Company.create(name: Faker::Company.name, style: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, phone: Faker::Number.number(10), url: Faker::Internet.url, email: Faker::Internet.email, address_id: 5, image: "p4.jpg")
+Address.create(name: "Z Space", street: "450 Florida St.", city: "San Francisco", state: "CA", zip: 94110)
 
-Production.create(company_id: 1, title: Faker::Commerce.product_name, writer: Faker::Name.name, director: Faker::Name.name, genre: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, url: Faker::Internet.url, email: Faker::Internet.email, image: "p2.jpg")
+Performance.create(address_id: 2, production_id: 1, date_and_time: DateTime.parse('Oct 4 2015 14:00'), price: 20)
 
-Production.create(company_id: 1, title: Faker::Commerce.product_name, writer: Faker::Name.name, director: Faker::Name.name, genre: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, url: Faker::Internet.url, email: Faker::Internet.email, image: "p3.jpg")
+Production.create(company_id: 1, title: "Arab Folk Song Recital", writer: "Saousan Jarjour", director: "n/a", genre: "Music", description: "Acclaimed Syrian-American soprano presents a repertoire of Arab folk songs, reimagined.", url: "http://www.goldenthread.org/reorient2015/", email: "information@goldenthread.org", image: "music.jpg")
 
-Production.create(company_id: 2, title: Faker::Commerce.product_name, writer: Faker::Name.name, director: Faker::Name.name, genre: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, url: Faker::Internet.url, email: Faker::Internet.email, image: "p5.jpg")
-
-Production.create(company_id: 2, title: Faker::Commerce.product_name, writer: Faker::Name.name, director: Faker::Name.name, genre: Faker::Commerce.department(1), description: Faker::Lorem.paragraph, url: Faker::Internet.url, email: Faker::Internet.email, image: "p6.jpg")
-
-
-counter = 1
-addy_counter = 1
-4.times do
-  2.times do
-    Performance.create(address_id: addy_counter, production_id: counter, date_and_time: Faker::Time.between(10.days.ago, Time.now, :evening), price: Faker::Number.decimal(2,2))
-    addy_counter += 1
-  end
-  counter += 1
-end
+Performance.create(address_id: 2, production_id: 2, date_and_time: DateTime.parse('Oct 3 2015 14:00'), price: 20)
 
 VoteType.create(criteria: "Venue", description: "How was the atmosphere? Was the staff helpful? How were concessions? Lines? Bathroom cleanliness?")
 

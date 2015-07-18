@@ -6,81 +6,80 @@
   </div>
 
   <div class="rating-and-image">
-    <div class="rating">
-      <% if @production.votes.count > 0 %>
-      Rating: <%= @production.rating %> out of 5<br>
-      <%= @production.votes.count %> votes
-      <% else %>
-      Rating: This production is not yet rated.
-      <% end %>
+      <div class="rating">
+        <% if @production.votes.count > 0 %>
+        Rating: <%= @production.rating %> out of 5<br>
+        <%= @production.votes.count %> votes
+        <% else %>
+        Rating: This production is not yet rated.
+        <% end %>
+      </div>
+
+      <img src="../imgs/<%= @production.image %>">
     </div>
 
-    <img src="../imgs/<%= @production.image %>">
+    <div class="production-details">
+      <span class="label">Director: </span><%= @production.director%><br>
+      <span class="label">Genre: </span><%= @production.genre%><br>
+      <span class="label">Description: </span><%= @production.description%><br>
+      <span class="label">Contact: </span><%= @production.email%>
+      <span class="label">Website </span><br>
+    </div>
+
   </div>
 
-  <div class="production-details">
-    <span class="label">Director: </span><%= @production.director%><br>
-    <span class="label">Genre: </span><%= @production.genre%><br>
-    <span class="label">Description: </span><%= @production.description%><br>
-    <span class="label">Contact: </span><%= @production.email%>
-    <span class="label">Website </span><br>
-  </div>
 
-</div>
+  <div class="production-view">
+    <h1>Performances</h1>
 
+    <% counter = 1 %>
+    <% @performances.each do |performance| %>
+      <% if counter % 2 != 0 %>
+        <div class="left">
+      <% else %>
+        <div class="right">
+      <% end %>
+      <% counter += 1 %>
 
-<div class="production-view">
-  <h1>Performances</h1>
+        <span class="label">Date: </span><%= performance.date_and_time.strftime("%a  %b %d, %Y")%><br>
+        <span class="label">Time:</span> <%= performance.date_and_time.strftime("%l:%M pm")%><br>
+        <span class="label">Price: </span>$<%= performance.price.to_s %>0<br>
+        <span class="label">Venue: </span><%= performance.address.name%><br>
+        <span class="label">Location:</span><br>
+        <%= performance.address.street%><br>
+        <%= performance.address.city%>, <%= performance.address.state%> <%= performance.address.zip%>
+      </div>
 
-  <% counter = 1 %>
-  <% @performances.each do |performance| %>
-    <% if counter % 2 != 0 %>
-      <div class="left">
-    <% else %>
-      <div class="right">
     <% end %>
-    <% counter += 1 %>
-
-      <span class="label">Date: </span><%= performance.date_and_time.strftime("%a  %b %d, %Y")%><br>
-      <span class="label">Time:</span> <%= performance.date_and_time.strftime("%l:%M pm")%><br>
-      <span class="label">Price: </span>$<%= performance.price.to_s %><br>
-      <span class="label">Neighborhood: </span><%= performance.address.neighborhood%><br>
-      <span class="label">Location:</span><br>
-      <%= performance.address.street%><br>
-      <%= performance.address.city%>, <%= performance.address.state%> <%= performance.address.zip%>
-    </div>
-
-  <% end %>
-</div>
-
-
-<div class="production-view">
-  <h1>About the Company</h1>
-
-  <div class="rating-and-image">
-    <div class="rating">
-      <% if @company.votes.count > 0 %>
-      Rating: <%= @company.rating %> out of 5<br>
-      <%= @company.votes.count %> votes
-      <% else %>
-      Rating: This company is not yet rated.
-      <% end %>
-    </div>
-
-    <img src="../imgs/<%= @company.image %>">
   </div>
 
-  <div class="production-details">
-    <span class="label">Name: </span><%= @company.name%><br>
-    <span class="label">Style: </span><%= @company.style%><br>
-    <span class="label">Description:</span> <%= @company.description%><br>
-    <span class="label">Contact: </span><%= @company.email%>
-    <span class="label">Phone: </span><%= @company.phone%><br>
-    <span class="label">Website:</span> <%= @company.url%><br>
-    <span class="label">Neighborhood: </span><%= @company.address.neighborhood%><br>
-    <span class="label">Location:</span><br>
-    <%= @company.address.street%><br>
-    <%= @company.address.city%>, <%= @company.address.state%> <%= @company.address.zip%>
+  <div class="production-view">
+    <h1>About the Company</h1>
+    <div class="rating-and-image">
+      <div class="rating">
+        <% if @company.votes.count > 0 %>
+        Rating: <%= @company.rating %> out of 5<br>
+        <%= @company.votes.count %> votes
+        <% else %>
+        Rating: This company is not yet rated.
+        <% end %>
+      </div>
+
+      <img src="../imgs/<%= @company.image %>">
+    </div>
+    <div class="production-details">
+      <span class="label">Name: </span><%= @company.name%><br>
+      <span class="label">Style: </span><%= @company.style%><br>
+      <span class="label">Description:</span> <%= @company.description%><br>
+      <span class="label">Contact: </span><%= @company.email%><br>
+      <span class="label">Phone: </span><%= @company.phone%><br>
+      <span class="label">Website:</span> <%= @company.url%><br>
+      <span class="label">Venue: </span><%= @company.address.name%><br>
+      <span class="label">Location:</span><br>
+      <%= @company.address.street%><br>
+      <%= @company.address.city%>, <%= @company.address.state%> <%= @company.address.zip%>
+
+    </div>
   </div>
 
 </div>
