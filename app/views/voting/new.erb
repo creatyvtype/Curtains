@@ -19,7 +19,16 @@
     <legend><%= vote_type.criteria %></legend>
     <span class="vote-desc"><%= vote_type.description %><br></span>
     <span class="score-label">Score<br></span>
-    <input class="score-box" type="number" name="<%= vote_type.criteria %>[score]"placeholder="5"><br>
+    <span class="rating">
+        <% for i in (5).downto(1) %>
+          <input type="radio" class="rating-input"
+            id="rating-input-<%= vote_type.criteria %>-<%= i %>" name="<%= vote_type.criteria %>[score]" value="<%= i %>">
+          <label for="rating-input-<%= vote_type.criteria %>-<%= i %>" class="rating-star"></label>
+        <% end %>
+    </span>
+
+    <br>
+
   </fieldset>
     <% end %>
 

@@ -16,6 +16,8 @@ end
 
 #stores vote, updates ratings
 post '/vote/new' do
+  p '*' * 80
+  p params
   @vote_types = VoteType.all
   @vote_types.each do |vote_type|
     Vote.create(
