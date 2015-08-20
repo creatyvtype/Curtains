@@ -21,7 +21,7 @@ An application has been filed to access Goldstar's API for existing ticketing an
 
 ## Installation and Usage
 No installation is currently required. The application is currently deployed with heroko:
-[Click here to view app](https://enthousiaste-chocolatine-1726.herokuapp.com/)
+[Click here to view app](https://curtains-passion-project.herokuapp.com/)
 
 ## Contributing
 1. Fork it!
